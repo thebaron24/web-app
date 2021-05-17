@@ -49,10 +49,13 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "apps/browser/src/favicon.ico",
-              "apps/browser/src/assets"
+              "apps/browser/src/assets",
+              "apps/browser/src/manifest.webmanifest"
             ],
             "styles": ["apps/browser/src/styles.scss"],
-            "scripts": []
+            "scripts": [],
+            "serviceWorker": true,
+            "ngswConfigPath": "apps/browser/ngsw-config.json"
           },
           "configurations": {
             "production": {
@@ -121,6 +124,61 @@
             "jestConfig": "apps/browser/jest.config.js",
             "passWithNoTests": true
           }
+        },
+        "server": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+            "outputPath": "dist/apps/server",
+            "main": "apps/browser/server.ts",
+            "tsConfig": "apps/browser/tsconfig.server.json",
+            "inlineStyleLanguage": "scss"
+          },
+          "configurations": {
+            "production": {
+              "outputHashing": "media",
+              "fileReplacements": [
+                {
+                  "replace": "apps/browser/src/environments/environment.ts",
+                  "with": "apps/browser/src/environments/environment.prod.ts"
+                }
+              ]
+            },
+            "development": {
+              "optimization": false,
+              "sourceMap": true,
+              "extractLicenses": false
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve-ssr": {
+          "builder": "@nguniversal/builders:ssr-dev-server",
+          "configurations": {
+            "development": {
+              "browserTarget": "browser:build:development",
+              "serverTarget": "browser:server:development"
+            },
+            "production": {
+              "browserTarget": "browser:build:production",
+              "serverTarget": "browser:server:production"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "prerender": {
+          "builder": "@nguniversal/builders:prerender",
+          "options": {
+            "routes": ["/"]
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "browser:build:production"
+            },
+            "development": {
+              "browserTarget": "browser:build:development"
+            }
+          },
+          "defaultConfiguration": "production"
         }
       }
     },
@@ -146,6 +204,56 @@
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": ["apps/browser-e2e/**/*.{js,ts}"]
+          }
+        }
+      }
+    },
+    "shell": {
+      "projectType": "library",
+      "root": "libs/shell",
+      "sourceRoot": "libs/shell/src",
+      "prefix": "web-app",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/shell"],
+          "options": {
+            "jestConfig": "libs/shell/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/shell/src/**/*.ts",
+              "libs/shell/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
+    "home": {
+      "projectType": "library",
+      "root": "libs/home",
+      "sourceRoot": "libs/home/src",
+      "prefix": "web-app",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/home"],
+          "options": {
+            "jestConfig": "libs/home/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/home/src/**/*.ts",
+              "libs/home/src/**/*.html"
+            ]
           }
         }
       }

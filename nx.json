@@ -25,6 +25,12 @@
     "browser-e2e": {
       "tags": [],
       "implicitDependencies": ["browser"]
+    },
+    "shell": {
+      "tags": []
+    },
+    "home": {
+      "tags": []
     }
   }
 }
