@@ -257,6 +257,31 @@
           }
         }
       }
+    },
+    "ui-framework": {
+      "projectType": "library",
+      "root": "libs/ui-framework",
+      "sourceRoot": "libs/ui-framework/src",
+      "prefix": "web-app",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/ui-framework"],
+          "options": {
+            "jestConfig": "libs/ui-framework/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/ui-framework/src/**/*.ts",
+              "libs/ui-framework/src/**/*.html"
+            ]
+          }
+        }
+      }
     }
   }
 }

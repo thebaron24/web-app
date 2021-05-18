@@ -3,5 +3,6 @@ module.exports = {
     '<rootDir>/apps/browser',
     '<rootDir>/libs/shell',
     '<rootDir>/libs/home',
+    '<rootDir>/libs/ui-framework',
   ],
 };

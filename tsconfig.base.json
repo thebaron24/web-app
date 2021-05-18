@@ -16,7 +16,8 @@
     "baseUrl": ".",
     "paths": {
       "@web-app/shell": ["libs/shell/src/index.ts"],
-      "@web-app/home": ["libs/home/src/index.ts"]
+      "@web-app/home": ["libs/home/src/index.ts"],
+      "@web-app/ui-framework": ["libs/ui-framework/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
