@@ -3,16 +3,15 @@ import { ServerModule } from '@angular/platform-server';
 
 import { AppModule } from './app.module';
 import { AppComponent } from './app.component';
-import { RouterModule } from '@angular/router';
 import { ShellModule } from '@web-app/shell';
-import { routes } from './app.routes';
 import { UiFrameworkModule } from '@web-app/ui-framework';
+import { RoutingModule } from '@web-app/routing';
 
 @NgModule({
   imports: [
     AppModule,
     ServerModule,
-    RouterModule.forRoot(routes),
+    RoutingModule,
     ShellModule,
     UiFrameworkModule
   ],

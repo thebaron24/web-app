@@ -2,18 +2,18 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { AppRoutingModule } from './app.routing.module';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { ShellModule } from '@web-app/shell';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { UiFrameworkModule } from '@web-app/ui-framework';
+import { RoutingModule } from '@web-app/routing';
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
-    AppRoutingModule,
+    RoutingModule,
     ShellModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,

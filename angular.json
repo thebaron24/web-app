@@ -282,6 +282,31 @@
           }
         }
       }
+    },
+    "routing": {
+      "projectType": "library",
+      "root": "libs/routing",
+      "sourceRoot": "libs/routing/src",
+      "prefix": "web-app",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/routing"],
+          "options": {
+            "jestConfig": "libs/routing/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/routing/src/**/*.ts",
+              "libs/routing/src/**/*.html"
+            ]
+          }
+        }
+      }
     }
   }
 }

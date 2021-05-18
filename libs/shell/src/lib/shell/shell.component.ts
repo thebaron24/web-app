@@ -9,7 +9,12 @@ import { MediaMatcher } from '@angular/cdk/layout';
 export class ShellComponent implements OnDestroy {
   mobileQuery: MediaQueryList;
 
-  fillerNav = Array.from({length: 50}, (_, i) => `Nav Item ${i + 1}`);
+  navItems = [
+    {
+      label: 'Home',
+      url: '/'
+    }
+  ];
 
   private readonly _mobileQueryListener: () => void;
 
