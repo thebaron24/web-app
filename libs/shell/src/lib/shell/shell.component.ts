@@ -8,9 +8,11 @@ import { MediaMatcher } from '@angular/cdk/layout';
 })
 export class ShellComponent implements OnDestroy {
   mobileQuery: MediaQueryList;
+  showLabels = true;
 
   navItems = [
     {
+      icon: 'home',
       label: 'Home',
       url: '/'
     }

@@ -1,9 +1,7 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { MaterialModule } from './material/material.module';
+import { MaterialModule } from '@web-app/material';
 
 @NgModule({
-  imports: [CommonModule, MaterialModule],
-  exports: [MaterialModule]
+  imports: [MaterialModule]
 })
 export class UiFrameworkModule {}

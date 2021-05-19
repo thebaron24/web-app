@@ -5,5 +5,6 @@ module.exports = {
     '<rootDir>/libs/home',
     '<rootDir>/libs/ui-framework',
     '<rootDir>/libs/routing',
+    '<rootDir>/libs/material',
   ],
 };

@@ -51,9 +51,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSortModule} from '@angular/material/sort';
 import {MatStepperModule} from '@angular/material/stepper';
 
-
 @NgModule({
-  declarations: [],
   imports: [
     CommonModule,
 
@@ -163,4 +161,4 @@ import {MatStepperModule} from '@angular/material/stepper';
     MatStepperModule
   ]
 })
-export class MaterialModule { }
+export class MaterialModule {}
