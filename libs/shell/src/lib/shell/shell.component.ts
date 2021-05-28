@@ -20,10 +20,15 @@ export class ShellComponent implements OnDestroy {
 
   private readonly _mobileQueryListener: () => void;
 
-  constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher) {
+  constructor(private changeDetectorRef: ChangeDetectorRef, media: MediaMatcher) {
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
-    this._mobileQueryListener = () => changeDetectorRef.detectChanges();
-    this.mobileQuery.addListener(this._mobileQueryListener);
+    this._mobileQueryListener = () => this.changeDetectorRef.detectChanges();
+    this.mobileQuery.addEventListener('change', this._mobileQueryListener);
+  }
+
+  public toggleLabels(): void {
+    this.showLabels = !this.showLabels;
+    this.changeDetectorRef.detectChanges();
   }
 
   ngOnDestroy(): void {

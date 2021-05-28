@@ -1,3 +1,40 @@
+header {
+  height: 50vh;
+  background: #0277bd;
+
+  display: flex;
+
+  .logo {
+    margin: auto;
+    width: auto;
+    height: 100%;
+  }
+}
+
+.shadow {
+  -webkit-filter: drop-shadow( 0px 10px 10px rgba(0, 0, 0, .5));
+  filter: drop-shadow( 0px 10px 10px rgba(0, 0, 0, .5));
+}
+
+.card-wrapper {
+  padding: 20px 10px;
+  display: flex;
+  justify-content: space-between;
+
+  > * {
+    flex: 1;
+    margin: 10px;
+  }
+
+  .card-content {
+    display: flex;
+
+    span {
+      padding: 3px 3px 3px 10px;
+    }
+  }
+}
+
 .content-wrapper {
   padding: 20px;
 }

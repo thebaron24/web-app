@@ -1,18 +1,15 @@
 <div class="shell-container" [class.shell-is-mobile]="mobileQuery.matches">
   <mat-toolbar color="primary" class="shell-toolbar mat-elevation-z6">
-    <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
-    <h1 class="shell-app-name">Responsive App</h1>
+    <button mat-icon-button (click)="sideNav.toggle()"><mat-icon>menu</mat-icon></button>
   </mat-toolbar>
 
-  <mat-sidenav-container class="shell-sidenav-container"
-                         [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
-    <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'"
-                 [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
+  <mat-sidenav-container class="shell-sidenav-container" autosize="true" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+    <mat-sidenav class="mat-elevation-z8" #sideNav [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
       <mat-nav-list>
         <a mat-list-item routerLink="{{nav.url}}" *ngFor="let nav of navItems"><mat-icon aria-hidden="false" aria-label="{{nav.label}}">{{nav.icon}}</mat-icon><span *ngIf="showLabels" class="menu-item-label">{{nav.label}}</span></a>
       </mat-nav-list>
       <mat-action-list>
-        <button mat-list-item (click)="showLabels = !showLabels"><mat-icon aria-hidden="false" aria-label="toggle menu labels">swap_horiz</mat-icon><span *ngIf="showLabels" class="menu-item-label">Toggle Menu Labels</span></button>
+        <button mat-list-item (click)="toggleLabels()"><mat-icon aria-hidden="false" aria-label="toggle menu labels">swap_horiz</mat-icon><span *ngIf="showLabels" class="menu-item-label">Toggle Menu Labels</span></button>
       </mat-action-list>
     </mat-sidenav>
 
