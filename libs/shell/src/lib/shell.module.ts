@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
-import { ShellComponent } from './shell/shell.component';
 import { RouterModule } from '@angular/router';
 import { MaterialModule } from '@web-app/material';
+
+import { ShellComponent } from './shell/shell.component';
 
 @NgModule({
   declarations: [

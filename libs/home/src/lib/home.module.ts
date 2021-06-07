@@ -1,9 +1,10 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HomeComponent } from './home/home.component';
-import { HomeRoutingModule } from './home.routing.module';
-import { UiFrameworkModule } from '@web-app/ui-framework';
+import { NgModule } from '@angular/core';
 import { MaterialModule } from '@web-app/material';
+import { UiFrameworkModule } from '@web-app/ui-framework';
+
+import { HomeRoutingModule } from './home.routing.module';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
