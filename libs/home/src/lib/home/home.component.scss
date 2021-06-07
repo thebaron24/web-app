@@ -2,8 +2,6 @@ header {
   height: 50vh;
   background: #0277bd;
 
-  display: flex;
-
   .logo {
     margin: auto;
     width: auto;
@@ -17,24 +15,14 @@ header {
 }
 
 .card-wrapper {
-  padding: 20px 10px;
-  display: flex;
-  justify-content: space-between;
+  padding: 10px;
 
-  > * {
-    flex: 1;
-    margin: 10px;
-  }
-
-  .card-content {
-    display: flex;
-
-    span {
-      padding: 3px 3px 3px 10px;
-    }
+  .avatar-image {
+    background-image: url('https://picsum.photos/600/400?grayscale');
+    background-size: cover;
   }
 }
 
 .content-wrapper {
-  padding: 20px;
+  padding: 10px;
 }
