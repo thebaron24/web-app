@@ -14,8 +14,13 @@ h1 {
   }
 }
 
+.shell-toolbar {
+  /* fixes drop shadow not showing on toolbar */
+  z-index: 2;
+}
+
 .shell-sidenav-container {
-  /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This
+  /* stretch the sidenav container to fill the available space. This
      causes `<mat-sidenav-content>` to act as our scrolling element for desktop layouts. */
   flex: 1;
 }

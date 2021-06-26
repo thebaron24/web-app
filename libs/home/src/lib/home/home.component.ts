@@ -6,10 +6,29 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
-  fillerContent = Array.from({length: 20}, () =>
-    `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+
+  private fillerContent = `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-       cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`);
+       cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`;
+
+  public fillerObjects = Array.from({length: 3}, () => {
+    return {
+      title: 'Heading',
+      subTitle: 'Sub Heading',
+      img: 'https://picsum.photos/600/400?grayscale',
+      content: this.fillerContent,
+      actions: [
+        {
+          name: 'action1',
+          url: '#'
+        },
+        {
+          name: 'action2',
+          url: '#'
+        }
+      ]
+    }
+  });
 }
