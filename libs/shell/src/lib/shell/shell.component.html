@@ -4,7 +4,7 @@
   </mat-toolbar>
 
   <mat-sidenav-container class="shell-sidenav-container" autosize="true" >
-    <mat-sidenav class="mat-elevation-z8" #sideNav [mode]="'over'">
+    <mat-sidenav class="mat-elevation-z8" #sideNav [mode]="sideNavMode">
       <mat-nav-list>
         <a mat-list-item routerLink="{{nav.url}}" *ngFor="let nav of navItems"><mat-icon aria-hidden="false" aria-label="{{nav.label}}">{{nav.icon}}</mat-icon><span *ngIf="showLabels" class="menu-item-label">{{nav.label}}</span></a>
       </mat-nav-list>

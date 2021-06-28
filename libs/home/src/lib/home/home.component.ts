@@ -15,9 +15,11 @@ export class HomeComponent {
 
   public fillerObjects = Array.from({length: 3}, () => {
     return {
+      icon: 'home',
       title: 'Heading',
       subTitle: 'Sub Heading',
       img: 'https://picsum.photos/600/400?grayscale',
+      imgAlt: 'Random Photo',
       content: this.fillerContent,
       actions: [
         {

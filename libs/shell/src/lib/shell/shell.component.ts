@@ -1,4 +1,5 @@
 import { ChangeDetectorRef, Component } from '@angular/core';
+import { MatDrawerMode } from '@angular/material/sidenav';
 
 @Component({
   selector: 'web-app-shell',
@@ -6,9 +7,10 @@ import { ChangeDetectorRef, Component } from '@angular/core';
   styleUrls: ['./shell.component.scss']
 })
 export class ShellComponent {
-  showLabels = true;
+  public showLabels = true;
+  public sideNavMode: MatDrawerMode = 'over';
 
-  navItems = [
+  public navItems = [
     {
       icon: 'home',
       label: 'Home',
@@ -23,6 +25,8 @@ export class ShellComponent {
 
   public toggleLabels(): void {
     this.showLabels = !this.showLabels;
+    this.sideNavMode = this.showLabels ? 'over' : 'side';
+
     this.changeDetectorRef.detectChanges();
   }
 
