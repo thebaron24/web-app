@@ -13,7 +13,7 @@ export class HomeComponent {
        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
        cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`;
 
-  public fillerObjects = Array.from({length: 3}, () => {
+  public fillerObjects = Array.from({length: 7}, () => {
     return {
       icon: 'home',
       title: 'Heading',
@@ -24,11 +24,11 @@ export class HomeComponent {
       actions: [
         {
           name: 'action1',
-          url: '#'
+          action: '#'
         },
         {
           name: 'action2',
-          url: '#'
+          action: '#'
         }
       ]
     }
