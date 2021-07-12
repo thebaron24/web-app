@@ -47,11 +47,7 @@
             "polyfills": "apps/browser/src/polyfills.ts",
             "tsConfig": "apps/browser/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
-            "assets": [
-              "apps/browser/src/favicon.ico",
-              "apps/browser/src/assets",
-              "apps/browser/src/manifest.webmanifest"
-            ],
+            "assets": ["apps/browser/src/favicon.ico", "apps/browser/src/assets", "apps/browser/src/manifest.webmanifest"],
             "styles": ["apps/browser/src/styles.scss"],
             "scripts": [],
             "serviceWorker": true,
@@ -111,10 +107,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "apps/browser/src/**/*.ts",
-              "apps/browser/src/**/*.html"
-            ]
+            "lintFilePatterns": ["apps/browser/src/**/*.ts", "apps/browser/src/**/*.html"]
           }
         },
         "test": {
@@ -225,10 +218,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "libs/shell/src/**/*.ts",
-              "libs/shell/src/**/*.html"
-            ]
+            "lintFilePatterns": ["libs/shell/src/**/*.ts", "libs/shell/src/**/*.html"]
           }
         }
       }
@@ -250,10 +240,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "libs/home/src/**/*.ts",
-              "libs/home/src/**/*.html"
-            ]
+            "lintFilePatterns": ["libs/home/src/**/*.ts", "libs/home/src/**/*.html"]
           }
         }
       }
@@ -275,10 +262,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "libs/ui-framework/src/**/*.ts",
-              "libs/ui-framework/src/**/*.html"
-            ]
+            "lintFilePatterns": ["libs/ui-framework/src/**/*.ts", "libs/ui-framework/src/**/*.html"]
           }
         }
       }
@@ -300,10 +284,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "libs/routing/src/**/*.ts",
-              "libs/routing/src/**/*.html"
-            ]
+            "lintFilePatterns": ["libs/routing/src/**/*.ts", "libs/routing/src/**/*.html"]
           }
         }
       }
@@ -325,10 +306,29 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "libs/material/src/**/*.ts",
-              "libs/material/src/**/*.html"
-            ]
+            "lintFilePatterns": ["libs/material/src/**/*.ts", "libs/material/src/**/*.html"]
+          }
+        }
+      }
+    },
+    "test-utils": {
+      "projectType": "library",
+      "root": "libs/test-utils",
+      "sourceRoot": "libs/test-utils/src",
+      "prefix": "web-app",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/test-utils"],
+          "options": {
+            "jestConfig": "libs/test-utils/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/test-utils/src/**/*.ts", "libs/test-utils/src/**/*.html"]
           }
         }
       }

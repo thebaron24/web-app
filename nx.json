@@ -40,6 +40,9 @@
     },
     "material": {
       "tags": []
+    },
+    "test-utils": {
+      "tags": []
     }
   }
 }
