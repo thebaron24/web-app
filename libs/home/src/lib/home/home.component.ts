@@ -33,4 +33,8 @@ export class HomeComponent {
       ]
     }
   });
+
+  public handleAction(action) {
+    alert(`${action.name} selected`);
+  }
 }

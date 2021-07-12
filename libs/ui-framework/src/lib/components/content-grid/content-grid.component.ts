@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 
 import { ContentGridContent } from './content-grid.model';
 
@@ -8,9 +8,22 @@ import { ContentGridContent } from './content-grid.model';
   styleUrls: ['./content-grid.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ContentGridComponent {
+export class ContentGridComponent<T> {
 
   @Input()
-  public items: ContentGridContent[]
+  public items: ContentGridContent<T>[]
+
+  @Input()
+  public basis?: string = '20em'
+
+  @Input()
+  public spacer?: string = '5px';
+
+  @Output()
+  public action: EventEmitter<T> = new EventEmitter<T>();
+
+  public handleAction(action: T) {
+    this.action.emit(action)
+  }
 
 }

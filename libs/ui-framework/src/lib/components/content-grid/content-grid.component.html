@@ -1,5 +1,5 @@
-<section fxLayout.xs="column" fxLayout="row wrap" [style.padding]="'5px'">
-  <mat-card *ngFor="let item of items" fxFlex.gt-xs="1 2 calc(20em + 5px)" [style.margin]="'5px'">
+<section fxLayout.xs="column" fxLayout="row wrap" [style.padding]="spacer">
+  <mat-card *ngFor="let item of items" fxFlex.gt-xs="1 2 calc({{basis}} - {{spacer}})" [style.margin]="spacer">
     <mat-card-header *ngIf="item.title || item.subTitle">
       <mat-card-title *ngIf="item.title">{{item.title}}</mat-card-title>
       <mat-card-subtitle *ngIf="item.subTitle">{{item.subTitle}}</mat-card-subtitle>
@@ -11,7 +11,7 @@
       </p>
     </mat-card-content>
     <mat-card-actions *ngIf="item.actions && item.actions.length">
-      <button *ngFor="let action of item.actions" mat-button>{{action.name}}</button>
+      <button *ngFor="let action of item.actions" mat-button (click)="handleAction(action)">{{action.name}}</button>
     </mat-card-actions>
   </mat-card>
 </section>

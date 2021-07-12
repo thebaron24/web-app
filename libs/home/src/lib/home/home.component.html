@@ -29,14 +29,4 @@
   </svg>
 </header>
 
-<web-app-content-grid [items]="fillerObjects"></web-app-content-grid>
-
-<section fxLayout="column" [style.padding]="'5px'">
-  <mat-card *ngFor="let item of fillerObjects" [style.margin]="'5px'">
-    <h1 *ngIf="item.title">
-      <mat-icon *ngIf="item.icon" aria-hidden="false" aria-label="{{item.icon}}">{{item.icon}}</mat-icon>
-      {{item.title}}
-    </h1>
-    <p *ngIf="item.content">{{item.content}}</p>
-  </mat-card>
-</section>
+<web-app-content-grid [items]="fillerObjects" (action)="handleAction($event)"></web-app-content-grid>
