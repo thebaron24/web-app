@@ -83,6 +83,7 @@
     "eslint-plugin-simple-import-sort": "^7.0.0",
     "jest": "26.2.2",
     "jest-preset-angular": "8.4.0",
+    "ng-mocks": "^12.3.1",
     "prettier": "2.2.1",
     "ts-jest": "26.5.5",
     "ts-node": "~9.1.1",
