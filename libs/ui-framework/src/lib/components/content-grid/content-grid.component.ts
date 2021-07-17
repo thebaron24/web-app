@@ -14,10 +14,10 @@ export class ContentGridComponent<T> {
   public items: ContentGridContent<T>[]
 
   @Input()
-  public basis?: string = '20em'
+  public basis = '20em'
 
   @Input()
-  public spacer?: string = '5px';
+  public spacer = '5px';
 
   @Output()
   public action: EventEmitter<T> = new EventEmitter<T>();
