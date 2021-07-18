@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
-import { MaterialModule } from '@web-app/material';
+import { AppShellModule } from '@web-app/ui-framework';
 
 import { ShellComponent } from './shell/shell.component';
 
@@ -8,7 +7,7 @@ import { ShellComponent } from './shell/shell.component';
   declarations: [
     ShellComponent
   ],
-  imports: [RouterModule, MaterialModule],
+  imports: [AppShellModule],
   exports: [ShellComponent]
 })
 export class ShellModule {}

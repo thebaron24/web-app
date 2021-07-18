@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { MaterialModule } from '@web-app/material';
-import { UiFrameworkModule } from '@web-app/ui-framework';
+import { ContentGridModule } from '@web-app/ui-framework';
 
 import { HomeRoutingModule } from './home.routing.module';
 import { HomeComponent } from './home/home.component';
@@ -10,6 +10,6 @@ import { HomeComponent } from './home/home.component';
   declarations: [
     HomeComponent
   ],
-  imports: [CommonModule, HomeRoutingModule, UiFrameworkModule, MaterialModule]
+  imports: [CommonModule, HomeRoutingModule, ContentGridModule, MaterialModule]
 })
 export class HomeModule {}

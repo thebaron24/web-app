@@ -1,17 +1,17 @@
 <section data-e2e="section" fxLayout.xs="column" fxLayout="row wrap" [style.padding]="spacer">
-  <mat-card [attr.data-e2e]="'card_' + itemIndex" *ngFor="let item of items; let itemIndex=index;" fxFlex.gt-xs="1 2 calc({{basis}} - {{spacer}})" [style.margin]="spacer">
-    <mat-card-header [attr.data-e2e]="'card_' + itemIndex + '_header'" *ngIf="item.title || item.subTitle">
-      <mat-card-title  [attr.data-e2e]="'card_' + itemIndex + '_title'" *ngIf="item.title">{{item.title}}</mat-card-title>
-      <mat-card-subtitle [attr.data-e2e]="'card_' + itemIndex + '_subTitle'" *ngIf="item.subTitle">{{item.subTitle}}</mat-card-subtitle>
+  <mat-card [attr.data-e2e]="'card-' + itemIndex" *ngFor="let item of items; let itemIndex=index;" fxFlex.gt-xs="1 2 calc({{basis}} - {{spacer}})" [style.margin]="spacer">
+    <mat-card-header [attr.data-e2e]="'card-' + itemIndex + '-header'" *ngIf="item.title || item.subTitle">
+      <mat-card-title  [attr.data-e2e]="'card-' + itemIndex + '-title'" *ngIf="item.title">{{item.title}}</mat-card-title>
+      <mat-card-subtitle [attr.data-e2e]="'card-' + itemIndex + '-subTitle'" *ngIf="item.subTitle">{{item.subTitle}}</mat-card-subtitle>
     </mat-card-header>
-    <img [attr.data-e2e]="'card_' + itemIndex +'_image'" *ngIf="item.img" mat-card-image src="{{item.img}}" alt="{{item.imgAlt}}">
-    <mat-card-content [attr.data-e2e]="'card_' + itemIndex +'_content'" *ngIf="item.content">
-      <p [attr.data-e2e]="'card_' + itemIndex + '_content_paragraph'">
+    <img [attr.data-e2e]="'card-' + itemIndex +'-image'" *ngIf="item.img" mat-card-image src="{{item.img}}" alt="{{item.imgAlt}}">
+    <mat-card-content [attr.data-e2e]="'card-' + itemIndex +'-content'" *ngIf="item.content">
+      <p [attr.data-e2e]="'card-' + itemIndex + '-content-paragraph'">
         {{item.content}}
       </p>
     </mat-card-content>
-    <mat-card-actions [attr.data-e2e]="'card_' + itemIndex + '_actions'" *ngIf="item.actions && item.actions.length">
-      <button [attr.data-e2e]="'card_' + itemIndex + '_action_button_' + actionIndex" *ngFor="let action of item.actions let actionIndex = index" mat-button (click)="handleAction(action)">{{action.name}}</button>
+    <mat-card-actions [attr.data-e2e]="'card-' + itemIndex + '-actions'" *ngIf="item.actions && item.actions.length">
+      <button [attr.data-e2e]="'card-' + itemIndex + '-action-button-' + actionIndex" *ngFor="let action of item.actions let actionIndex = index" mat-button (click)="handleAction(action)">{{action.name}}</button>
     </mat-card-actions>
   </mat-card>
 </section>

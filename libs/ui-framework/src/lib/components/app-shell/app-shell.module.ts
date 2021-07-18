@@ -1,19 +1,21 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
 import { MaterialModule } from '@web-app/material';
 
-import { ContentGridComponent } from './content-grid.component';
+import { AppShellComponent } from './app-shell.component';
 
 @NgModule({
   declarations: [
-    ContentGridComponent
+    AppShellComponent
   ],
   imports: [
     CommonModule,
-    MaterialModule
+    MaterialModule,
+    RouterModule
   ],
   exports: [
-    ContentGridComponent
+    AppShellComponent
   ]
 })
-export class ContentGridModule { }
+export class AppShellModule { }

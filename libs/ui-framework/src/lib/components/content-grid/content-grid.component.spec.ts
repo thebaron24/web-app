@@ -52,11 +52,11 @@ describe('ContentGridComponent', () => {
     const cardIndex = 0;
     const mockDataCard = items.find((i) => i.icon === `${cardIndex}_icon`);
 
-    const cardTitleEl = fixture.debugElement.query(By.css(`[data-e2e=card_${cardIndex}_title]`));
-    const cardSubTitleEl = fixture.debugElement.query(By.css(`[data-e2e=card_${cardIndex}_subTitle]`));
-    const cardImageEl = fixture.debugElement.query(By.css(`[data-e2e=card_${cardIndex}_image]`));
-    const cardParagraphEl = fixture.debugElement.query(By.css(`[data-e2e=card_${cardIndex}_content_paragraph]`));
-    const cardButtonEl = fixture.debugElement.query(By.css(`[data-e2e=card_${cardIndex}_action_button_${cardIndex}]`));
+    const cardTitleEl = fixture.debugElement.query(By.css(`[data-e2e=card-${cardIndex}-title]`));
+    const cardSubTitleEl = fixture.debugElement.query(By.css(`[data-e2e=card-${cardIndex}-subTitle]`));
+    const cardImageEl = fixture.debugElement.query(By.css(`[data-e2e=card-${cardIndex}-image]`));
+    const cardParagraphEl = fixture.debugElement.query(By.css(`[data-e2e=card-${cardIndex}-content-paragraph]`));
+    const cardButtonEl = fixture.debugElement.query(By.css(`[data-e2e=card-${cardIndex}-action-button-${cardIndex}]`));
 
     cardButtonEl.nativeElement.click();
 
