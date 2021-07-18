@@ -56,15 +56,13 @@ describe('ContentGridComponent', () => {
     const cardSubTitleEl = fixture.debugElement.query(By.css(`[data-e2e=card_${cardIndex}_subTitle]`));
     const cardImageEl = fixture.debugElement.query(By.css(`[data-e2e=card_${cardIndex}_image]`));
     const cardParagraphEl = fixture.debugElement.query(By.css(`[data-e2e=card_${cardIndex}_content_paragraph]`));
-    // TODO: target specific button
-    // const cardButtonEl = fixture.debugElement.query(By.css(`[data-e2e='card_${cardIndex}_action_button_${cardIndex}]`));
-    const cardButtonEl = fixture.debugElement.query(By.css(`button`));
-    cardButtonEl.nativeElement.click();
+    const cardButtonEl = fixture.debugElement.query(By.css(`[data-e2e=card_${cardIndex}_action_button_${cardIndex}]`));
 
+    cardButtonEl.nativeElement.click();
 
     expect(cardTitleEl.nativeElement.innerHTML.trim()).toEqual(mockDataCard.title);
     expect(cardSubTitleEl.nativeElement.innerHTML.trim()).toEqual(mockDataCard.subTitle);
-    expect(cardImageEl.nativeElement.src).toEqual('http://localhost/' + mockDataCard.img);
+    expect(cardImageEl.nativeElement.src).toContain(mockDataCard.img);
     expect(cardParagraphEl.nativeElement.innerHTML.trim()).toEqual(mockDataCard.content);
     expect(cardButtonEl.nativeElement.innerHTML.trim()).toEqual(mockDataCard.actions[cardIndex].name);
     expect(actionOutputSpy).toHaveBeenCalledWith(mockDataCard.actions[cardIndex]);
