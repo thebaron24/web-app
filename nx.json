@@ -26,23 +26,31 @@
       "tags": [],
       "implicitDependencies": ["browser"]
     },
-    "shell": {
-      "tags": []
-    },
     "home": {
-      "tags": []
-    },
-    "ui-framework": {
-      "tags": []
-    },
-    "routing": {
       "tags": []
     },
     "material": {
       "tags": []
     },
+    "routing": {
+      "tags": []
+    },
+    "shell": {
+      "tags": []
+    },
     "test-utils": {
       "tags": []
+    },
+    "ui-framework": {
+      "tags": []
     }
+  },
+  "targetDependencies": {
+    "build": [
+      {
+        "target": "build",
+        "projects": "dependencies"
+      }
+    ]
   }
 }

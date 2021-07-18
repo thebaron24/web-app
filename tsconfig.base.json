@@ -15,12 +15,12 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@web-app/shell": ["libs/shell/src/index.ts"],
       "@web-app/home": ["libs/home/src/index.ts"],
-      "@web-app/ui-framework": ["libs/ui-framework/src/index.ts"],
-      "@web-app/routing": ["libs/routing/src/index.ts"],
       "@web-app/material": ["libs/material/src/index.ts"],
-      "@web-app/test-utils": ["libs/test-utils/src/index.ts"]
+      "@web-app/routing": ["libs/routing/src/index.ts"],
+      "@web-app/shell": ["libs/shell/src/index.ts"],
+      "@web-app/test-utils": ["libs/test-utils/src/index.ts"],
+      "@web-app/ui-framework": ["libs/ui-framework/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
