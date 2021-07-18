@@ -1,31 +1,29 @@
-import { TestBed } from '@angular/core/testing';
+import { By } from '@angular/platform-browser';
+import { MockBuilder, MockedComponentFixture, MockRender } from 'ng-mocks';
+
 import { AppComponent } from './app.component';
+import { AppModule } from './app.module';
 
 describe('AppComponent', () => {
+  let component: AppComponent;
+  let fixture: MockedComponentFixture<AppComponent>;
+
   beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [AppComponent],
-    }).compileComponents();
+    await MockBuilder(AppComponent, AppModule);
+    await render();
   });
 
-  it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app).toBeTruthy();
+  it('should create and render the web app shell', () => {
+    const webAppShell = fixture.debugElement.query(By.css('[data-e2e=web-app-shell]'));
+
+    expect(component).toBeTruthy();
+    expect(webAppShell).toBeTruthy();
   });
 
-  it(`should have as title 'browser'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('browser');
-  });
-
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
+  async function render(params: Pick<AppComponent, never> = {}) {
+    fixture = MockRender(AppComponent, params as AppComponent);
+    component = fixture.point.componentInstance;
     fixture.detectChanges();
-    const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain(
-      'Welcome to browser!'
-    );
-  });
+    return fixture.whenRenderingDone();
+  }
 });
