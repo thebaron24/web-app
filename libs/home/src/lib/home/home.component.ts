@@ -12,7 +12,7 @@ export class HomeComponent {
   public items: HomeGridItem[];
 
   constructor() {
-    this.items = this.getHomeGridItems(7);
+    this.items = this.getHomeGridItems(10);
   }
 
   public handleGridAction(action: HomeGridAction) {
@@ -25,7 +25,7 @@ export class HomeComponent {
         icon: `icon ${index}`,
         title: `Heading  ${index}`,
         subTitle: `Sub Heading  ${index}`,
-        img: 'https://picsum.photos/600/400?grayscale',
+        img: 'https://picsum.photos/600/400?grayscale' + `&random=${index}`,
         imgAlt: `Random Photo  ${index}`,
         content: ` ${index} Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
