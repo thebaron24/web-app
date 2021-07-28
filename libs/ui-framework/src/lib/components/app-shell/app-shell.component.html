@@ -4,7 +4,7 @@
       <button  *ngFor="let nav of mainNav" [style]="{ color: 'inherit' }" [attr.data-e2e]="nav.e2e" mat-list-item (click)="sideNav.toggle()"><mat-icon [style]="{ color: 'inherit' }">{{nav.icon}}</mat-icon></button>
     </mat-action-list>
     <mat-nav-list fxLayout="row" [style]="{ padding: 0 }">
-      <a [style]="{ color: 'inherit' }" mat-list-item routerLink="{{nav.url}}" *ngFor="let nav of userNav"><mat-icon [style]="{ color: 'inherit' }" aria-hidden="false" aria-label="{{nav.label}}">{{nav.icon}}</mat-icon></a>
+      <a [style]="{ color: 'inherit' }" mat-list-item routerLink="{{nav.url}}" *ngFor="let nav of userNav"><mat-icon [style]="{ color: 'inherit' }" aria-hidden="false" [attr.aria-label]="nav.label">{{nav.icon}}</mat-icon></a>
     </mat-nav-list>
   </mat-toolbar>
 
@@ -12,7 +12,7 @@
     <mat-sidenav class="mat-elevation-z1" #sideNav [mode]="sideNavMode">
       <div fxLayout="column" fxLayoutAlign="space-between" [style]="{ height: '100%', overflow: 'hidden' }">
         <mat-nav-list fxLayout="column">
-          <a mat-list-item routerLink="{{nav.url}}" *ngFor="let nav of sideBarNav"><mat-icon aria-hidden="false" aria-label="{{nav.label}}">{{nav.icon}}</mat-icon><span *ngIf="showLabels" class="menu-item-label">{{nav.label}}</span></a>
+          <a mat-list-item routerLink="{{nav.url}}" *ngFor="let nav of sideBarNav"><mat-icon aria-hidden="false" [attr.aria-label]="nav.label">{{nav.icon}}</mat-icon><span *ngIf="showLabels" class="menu-item-label">{{nav.label}}</span></a>
         </mat-nav-list>
         <mat-action-list fxLayout="column">
           <button mat-list-item (click)="toggleLabels()"><mat-icon aria-hidden="false" aria-label="toggle menu labels">swap_horiz</mat-icon><span *ngIf="showLabels" class="menu-item-label">Toggle Menu Labels</span></button>

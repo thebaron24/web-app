@@ -1,7 +1,7 @@
-import { AppShellModule } from '@web-app/ui-framework';
 import { MockBuilder, MockedComponentFixture, MockRender } from 'ng-mocks';
 
 import { AppShellComponent } from './app-shell.component';
+import { AppShellModule } from './app-shell.module';
 
 describe('AppShellComponent', () => {
   let component: AppShellComponent;
