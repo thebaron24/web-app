@@ -1,16 +1,23 @@
-<main class="shell-container">
-  <mat-toolbar color="primary" class="shell-toolbar mat-elevation-z6">
-    <button data-e2e="shell-menu-button" mat-icon-button (click)="sideNav.toggle()"><mat-icon>menu</mat-icon></button>
+<main class="shell-container" fxLayout="column">
+  <mat-toolbar color="primary" class="shell-toolbar mat-elevation-z2" [style]="{ padding: 0 }" fxLayout="row" fxLayoutAlign="space-between center">
+    <mat-action-list fxLayout="column" [style]="{ padding: 0 }">
+      <button  *ngFor="let nav of mainNav" [style]="{ color: 'inherit' }" [attr.data-e2e]="nav.e2e" mat-list-item (click)="sideNav.toggle()"><mat-icon [style]="{ color: 'inherit' }">{{nav.icon}}</mat-icon></button>
+    </mat-action-list>
+    <mat-nav-list fxLayout="row" [style]="{ padding: 0 }">
+      <a [style]="{ color: 'inherit' }" mat-list-item routerLink="{{nav.url}}" *ngFor="let nav of userNav"><mat-icon [style]="{ color: 'inherit' }" aria-hidden="false" aria-label="{{nav.label}}">{{nav.icon}}</mat-icon></a>
+    </mat-nav-list>
   </mat-toolbar>
 
   <mat-sidenav-container class="shell-sidenav-container" autosize="true">
-    <mat-sidenav class="mat-elevation-z8" #sideNav [mode]="sideNavMode">
-      <mat-nav-list>
-        <a mat-list-item routerLink="{{nav.url}}" *ngFor="let nav of navItems"><mat-icon aria-hidden="false" aria-label="{{nav.label}}">{{nav.icon}}</mat-icon><span *ngIf="showLabels" class="menu-item-label">{{nav.label}}</span></a>
-      </mat-nav-list>
-      <mat-action-list>
-        <button mat-list-item (click)="toggleLabels()"><mat-icon aria-hidden="false" aria-label="toggle menu labels">swap_horiz</mat-icon><span *ngIf="showLabels" class="menu-item-label">Toggle Menu Labels</span></button>
-      </mat-action-list>
+    <mat-sidenav class="mat-elevation-z1" #sideNav [mode]="sideNavMode">
+      <div fxLayout="column" fxLayoutAlign="space-between" [style]="{ height: '100%', overflow: 'hidden' }">
+        <mat-nav-list fxLayout="column">
+          <a mat-list-item routerLink="{{nav.url}}" *ngFor="let nav of sideBarNav"><mat-icon aria-hidden="false" aria-label="{{nav.label}}">{{nav.icon}}</mat-icon><span *ngIf="showLabels" class="menu-item-label">{{nav.label}}</span></a>
+        </mat-nav-list>
+        <mat-action-list fxLayout="column">
+          <button mat-list-item (click)="toggleLabels()"><mat-icon aria-hidden="false" aria-label="toggle menu labels">swap_horiz</mat-icon><span *ngIf="showLabels" class="menu-item-label">Toggle Menu Labels</span></button>
+        </mat-action-list>
+      </div>
     </mat-sidenav>
 
     <mat-sidenav-content>

@@ -12,11 +12,42 @@ export class AppShellComponent {
   public showLabels = true;
   public sideNavMode: MatDrawerMode = 'over';
 
-  public navItems = [
+  public mainNav = [
+    {
+      icon: 'menu',
+      label: 'Menu',
+      url: '/',
+      e2e: 'shell-menu-button'
+    }
+  ];
+
+  public sideBarNav = [
     {
       icon: 'home',
       label: 'Home',
-      url: '/'
+      url: '/',
+      e2e: ''
+    }
+  ];
+
+  public userNav = [
+    {
+      icon: 'person',
+      label: 'Person',
+      url: '/',
+      e2e: ''
+    },
+    {
+      icon: 'share',
+      label: 'Share',
+      url: '/',
+      e2e: ''
+    },
+    {
+      icon: 'settings',
+      label: 'Settings',
+      url: '/',
+      e2e: ''
     }
   ];
 
@@ -28,6 +59,6 @@ export class AppShellComponent {
     this.showLabels = !this.showLabels;
     this.sideNavMode = this.showLabels ? 'over' : 'side';
 
-    this.changeDetectorRef.detectChanges();
+    setTimeout(() => this.changeDetectorRef.detectChanges(), 0);
   }
 }
