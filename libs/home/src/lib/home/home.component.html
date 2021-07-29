@@ -1,5 +1,24 @@
-<header fxLayout="row" [style.height]="'50vh'">
-  <img [style]="{ margin: 'auto', width: 'auto', maxHeight: '100%'}" class="logo shadow" src="/assets/images/angular_white_logo.svg" alt="site logo" />
+<header data-e2e="header" fxLayout.xs="column" fxLayout="row wrap" [style]="{ padding: spacer, height: '50vh'}">
+  <img (mousemove)="mouseMove($event)" (mousedown)="mouseDown($event)" (mouseup)="mouseUp($event)" (dblclick)="doubleClick($event)"  [style]="{ margin: 'auto', width: 'auto', maxHeight: '100%'}" class="logo shadow" src="/assets/images/angular_white_logo.svg" alt="site logo" />
+  <canvas *ngIf="isBrowser" (window:resize)="resize($event)" (mousemove)="mouseMove($event)" (mousedown)="mouseDown($event)" (mouseup)="mouseUp($event)" (dblclick)="doubleClick($event)" id="c" #canvas></canvas>
 </header>
 
 <web-app-content-grid data-e2e="home-content-grid" [items]="items" (action)="handleGridAction($event)"></web-app-content-grid>
+
+
+<!--  <mat-card [attr.data-e2e]="'header-' + itemIndex" *ngFor="let item of headers; let itemIndex=index;" fxFlex.gt-xs="1 2 calc({{basis}} - {{spacer}})" [style.margin]="spacer">-->
+<!--  <mat-card [attr.data-e2e]="'header-' + itemIndex" *ngFor="let item of headers; let itemIndex=index;" fxFlex.gt-xs="1 2 calc({{basis}} - {{spacer}})" [style.margin]="spacer">-->
+<!--    <mat-card-header [attr.data-e2e]="'header-' + itemIndex + '-header'" *ngIf="item.title || item.subTitle">-->
+<!--      <mat-card-title  [attr.data-e2e]="'header-' + itemIndex + '-title'" *ngIf="item.title">{{item.title}}</mat-card-title>-->
+<!--      <mat-card-subtitle [attr.data-e2e]="'header-' + itemIndex + '-subTitle'" *ngIf="item.subTitle">{{item.subTitle}}</mat-card-subtitle>-->
+<!--    </mat-card-header>-->
+<!--    <img [attr.data-e2e]="'header-' + itemIndex +'-image'" *ngIf="item.img" mat-card-image src="{{item.img}}" alt="{{item.imgAlt}}">-->
+<!--    <mat-card-content [attr.data-e2e]="'header-' + itemIndex +'-content'" *ngIf="item.content">-->
+<!--      <p [attr.data-e2e]="'header-' + itemIndex + '-content-paragraph'">-->
+<!--        {{item.content}}-->
+<!--      </p>-->
+<!--    </mat-card-content>-->
+<!--    <mat-card-actions [attr.data-e2e]="'header-' + itemIndex + '-actions'" *ngIf="item.actions && item.actions.length">-->
+<!--      <button [attr.data-e2e]="'header-' + itemIndex + '-action-button-' + actionIndex" *ngFor="let action of item.actions let actionIndex = index" mat-button (click)="handleAction(action)">{{action.name}}</button>-->
+<!--    </mat-card-actions>-->
+<!--  </mat-card>-->
