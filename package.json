@@ -29,7 +29,8 @@
     "dev:ssr": "ng run browser:serve-ssr",
     "serve:ssr": "node dist/apps/server/main.js",
     "build:ssr": "ng build && ng run browser:server",
-    "prerender": "ng run browser:prerender"
+    "prerender": "ng run browser:prerender",
+    "heroku-postbuild": "npm run build:ssr"
   },
   "private": true,
   "dependencies": {
