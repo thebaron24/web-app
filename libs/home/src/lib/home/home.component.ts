@@ -108,7 +108,8 @@ export class HomeComponent implements AfterViewInit {
         return;
       }
     }
-    this.gravities.push(new GravityPoint(e.clientX, e.clientY, this.G_POINT_RADIUS, {
+    //TODO: offset 56 to the left when menu is docked on the side
+    this.gravities.push(new GravityPoint(e.clientX, e.clientY - 48, this.G_POINT_RADIUS, {
       particles: this.particles,
       gravities: this.gravities
     }));
