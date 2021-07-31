@@ -48,6 +48,9 @@ export class HomeComponent implements AfterViewInit {
 
   public basis = '20em';
 
+  public xBuffer: 56;
+  public yBuffer: 48;
+
   constructor(private ngZone: NgZone, @Inject(PLATFORM_ID) private platformId: Record<string, unknown>) {
     this.items = this.getHomeGridItems(10);
     this.headers = [
@@ -86,8 +89,17 @@ export class HomeComponent implements AfterViewInit {
     this.bufferCtx = this.bufferCvs.getContext('2d');
   }
 
+  //TODO: offset 56 x to the left when menu is docked on the side and 48 y the height of the top bar
+  private calculateXBuffer(x): number {
+    return x;
+  }
+
+  private calculateYBuffer(y): number {
+    return y - 48;
+  }
+
   public mouseMove(e) {
-    this.mouse.set(e.clientX, e.clientY);
+    this.mouse.set(this.calculateXBuffer(e.clientX), this.calculateYBuffer(e.clientY));
 
     let i, g, hit = false;
     for (i = this.gravities.length - 1; i >= 0; i--) {
@@ -108,8 +120,7 @@ export class HomeComponent implements AfterViewInit {
         return;
       }
     }
-    //TODO: offset 56 to the left when menu is docked on the side
-    this.gravities.push(new GravityPoint(e.clientX, e.clientY - 48, this.G_POINT_RADIUS, {
+    this.gravities.push(new GravityPoint(this.calculateXBuffer(e.clientX), this.calculateYBuffer(e.clientY), this.G_POINT_RADIUS, {
       particles: this.particles,
       gravities: this.gravities
     }));
