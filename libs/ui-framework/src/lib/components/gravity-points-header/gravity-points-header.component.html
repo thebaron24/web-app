@@ -1,0 +1,4 @@
+<header data-e2e="header" fxLayout.xs="column" fxLayout="row wrap" [style]="{ padding: spacer, height: height }">
+  <img (mousemove)="mouseMove($event)" (mousedown)="mouseDown($event)" (mouseup)="mouseUp($event)" (dblclick)="doubleClick($event)"  [style]="{ margin: 'auto', width: 'auto', maxHeight: '100%'}" class="logo shadow" src="/assets/images/angular_white_logo.svg" alt="site logo" />
+  <canvas *ngIf="isBrowser" (window:resize)="resize($event)" (mousemove)="mouseMove($event)" (mousedown)="mouseDown($event)" (mouseup)="mouseUp($event)" (dblclick)="doubleClick($event)" id="c" #canvas></canvas>
+</header>
